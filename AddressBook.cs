@@ -69,5 +69,19 @@ namespace AddressBookSystem
             string jsonData = JsonConvert.SerializeObject(per);  // it convert custom to Json.... Json Convert the Serialize Object data into the string data (i.e. covert from list to string ) 
             File.WriteAllText(@"C:\Users\HP\Bridgelabz-145\Assignments_\Day 9\AddressBookSystem\AddressBookSystem\AddressBokkResult.json", jsonData);
         }
+        public void RemovePersonDetails(string First_Name)
+        {
+            Person persn = null;
+            foreach (Person del in per)
+            {
+                if (del.First_Name == First_Name)
+                {
+                    persn = del;
+                }
+            }
+            per.Remove(persn);
+            string jsonData = JsonConvert.SerializeObject(per);
+            File.WriteAllText(@"C:\Users\HP\Bridgelabz-145\Assignments_\Day 9\AddressBookSystem\AddressBookSystem\AddressBokkResult.json", jsonData);
+        }
     }
 }

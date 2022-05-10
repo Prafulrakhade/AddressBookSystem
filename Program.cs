@@ -7,7 +7,7 @@ namespace AddressBookSystem
         static void Main(string[] args)
         {
             Console.WriteLine("\n\n-------- WELCOME TO THE ADDRESS BOOK SYSTEM PROGRAM ----------------");
-            Console.WriteLine("\n Enter The Details :: ");
+            Console.WriteLine("\n Enter The Contact Details :: ");
             AddressBook add = new AddressBook();
             Person person = new Person();
             Console.Write("Enter the First Name : ");
@@ -45,6 +45,17 @@ namespace AddressBookSystem
             Console.WriteLine();
             string Name = Console.ReadLine();
             edit.EditPersonDetails(Name);
+            edit.Display();
+            Console.WriteLine("---------------------------------------------------------------------------------------------");
+
+
+            AddressBook delete = new AddressBook();
+            delete.Display();
+            Console.WriteLine("Enter The Name For Delete the Contact Details: ");
+            string Name2 = Console.ReadLine();
+            delete.RemovePersonDetails(Name2);
+            delete.Display();
+            Console.WriteLine("---------------------------------------------------------------------------------------------");
         }
     }
 }
