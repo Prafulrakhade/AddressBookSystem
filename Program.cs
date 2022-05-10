@@ -38,7 +38,13 @@ namespace AddressBookSystem
             add.AddPerson(person);
             add.Display();
             Console.WriteLine("---------------------------------------------------------------------------------------------");
-            add.Display();
+
+            AddressBook edit = new();
+            edit.Display();
+            Console.WriteLine("Enter The Name For Edit Contact Details: ");
+            Console.WriteLine();
+            string Name = Console.ReadLine();
+            edit.EditPersonDetails(Name);
         }
     }
 }
