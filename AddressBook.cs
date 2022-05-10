@@ -61,10 +61,6 @@ namespace AddressBookSystem
                     Console.Write("Enter The Email ID: ");
                     per[i].Email_ID = Console.ReadLine();
                 }
-                else
-                {
-                    Console.WriteLine("Only Same Person Name Required For Edit Person Details :: ");
-                }
             }
             string jsonData = JsonConvert.SerializeObject(per);  // it convert custom to Json.... Json Convert the Serialize Object data into the string data (i.e. covert from list to string ) 
             File.WriteAllText(@"C:\Users\HP\Bridgelabz-145\Assignments_\Day 9\AddressBookSystem\AddressBookSystem\AddressBokkResult.json", jsonData);
