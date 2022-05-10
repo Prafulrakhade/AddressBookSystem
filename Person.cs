@@ -22,7 +22,6 @@ namespace AddressBookSystem
         {
             return "First Name: " + First_Name + "\n Last name: " + Last_Name + "\n Address: " + Address + "\n City: " + City +
             "\n State:" + State + "\n Zip Code: " + Zip_Code + "\n Phone Number: " + Phone_Number + "\n Email ID: " + Email_ID;
-            Console.WriteLine();
         }
     }
 }

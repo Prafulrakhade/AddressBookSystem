@@ -7,6 +7,7 @@ namespace AddressBookSystem
         static void Main(string[] args)
         {
             Console.WriteLine("\n\n-------- WELCOME TO THE ADDRESS BOOK SYSTEM PROGRAM ----------------");
+            Console.WriteLine("\n Enter The Details :: ");
             AddressBook add = new AddressBook();
             Person person = new Person();
             Console.Write("Enter the First Name : ");
@@ -36,7 +37,8 @@ namespace AddressBookSystem
             Console.WriteLine();
             add.AddPerson(person);
             add.Display();
-
+            Console.WriteLine("---------------------------------------------------------------------------------------------");
+            add.Display();
         }
     }
 }
