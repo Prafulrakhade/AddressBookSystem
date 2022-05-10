@@ -10,7 +10,14 @@ namespace AddressBookSystem
 {
     internal class AddressBook
     {
-       public List<Person> per = new List<Person>();
+        public List<Person> per = new List<Person>();
+        public void Display()
+        {
+            foreach (Person pr in per)
+            {
+                Console.WriteLine(pr.Print());
+            }
+        }
         public void AddPerson(Person p)
         {
             per.Add(p);
@@ -18,6 +25,7 @@ namespace AddressBookSystem
             File.WriteAllText(@"C:\Users\HP\Bridgelabz-145\Assignments_\Day 9\AddressBookSystem\AddressBookSystem\AddressBokkResult.json", jsonData);
             //File.WriteAllText string data stored in Json File.  
         }
+
         public AddressBook()
         {
             string json = File.ReadAllText(@"C:\Users\HP\Bridgelabz-145\Assignments_\Day 9\AddressBookSystem\AddressBookSystem\AddressBokkResult.json");
@@ -30,13 +38,36 @@ namespace AddressBookSystem
                 per = new List<Person>();
             }
         }
-        public void Display()
+        public void EditPersonDetails(string First_Name)
         {
-            foreach(Person pr in per)
+            for (int i = 0; i < per.Count; i++)
             {
-                Console.WriteLine(pr.Print());
+                if (per[i].First_Name == First_Name)
+                {
+                    Console.Write("Enter The First Name: ");
+                    per[i].First_Name = Console.ReadLine();
+                    Console.Write("Enter The Last Name: ");
+                    per[i].Last_Name = Console.ReadLine();
+                    Console.Write("Enter The Address ");
+                    per[i].Address = Console.ReadLine();
+                    Console.Write("Enter The City: ");
+                    per[i].City = Console.ReadLine();
+                    Console.Write("Enter The State: ");
+                    per[i].State = Console.ReadLine();
+                    Console.Write("Enter The Zip Code: ");
+                    per[i].Zip_Code = long.Parse(Console.ReadLine());
+                    Console.Write("Enter The Phone Number: ");
+                    per[i].Phone_Number = long.Parse(Console.ReadLine());
+                    Console.Write("Enter The Email ID: ");
+                    per[i].Email_ID = Console.ReadLine();
+                }
+                else
+                {
+                    Console.WriteLine("Only Same Person Name Required For Edit Person Details :: ");
+                }
             }
+            string jsonData = JsonConvert.SerializeObject(per);  // it convert custom to Json.... Json Convert the Serialize Object data into the string data (i.e. covert from list to string ) 
+            File.WriteAllText(@"C:\Users\HP\Bridgelabz-145\Assignments_\Day 9\AddressBookSystem\AddressBookSystem\AddressBokkResult.json", jsonData);
         }
-        
     }
 }
